@@ -1,9 +1,15 @@
 import { Button } from './components/Button';
 import { Home } from './pages/Home';
+import { NewRoom } from './pages/NewRoom';
 
+//Importação de rota para navegação da página.
+import { BrowserRouter, Route } from 'react-router-dom';
 function App() {
   return (
-    <Home />
+    <BrowserRouter>
+      <Route path="/" exact component={Home} />
+      <Route path="/rooms/new" component={NewRoom} />
+    </BrowserRouter>
   );
 }
 
