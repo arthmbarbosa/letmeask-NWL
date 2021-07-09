@@ -23,7 +23,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 
   const [user, setUser] = useState<User>();
 
-  //função que executa quando um evento acontecer. Usada para exibir as dados de login do usuário em outras telas
+  //Hook (Por padrão os hooks sempre começam com use) que executa quando um evento acontecer. Usada para exibir as dados de login do usuário em outras telas
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
@@ -46,14 +46,13 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       unsubscribe();
     }
 
-  }, [user])
+  }, [])
 
   async function signInWithGoogle() {
-    console.log('Entes provider')
     const provider = new firebase.auth.GoogleAuthProvider();
-    console.log(provider)
+
     const result = await auth.signInWithPopup(provider);
-    console.log(result)
+
     if (result.user) {
       const { displayName, photoURL, uid } = result.user
 
@@ -68,8 +67,8 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       })
 
     }
-
   }
+
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
       {props.children}
