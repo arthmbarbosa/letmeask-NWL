@@ -9,14 +9,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
+      
 
-      img{
+      > img{
         max-height: 45px;
       }
-      div{
+
+      > div{
         display: flex;
-        gap: 16px;
+        gap: 16px; //espaçamento interno entre display flex
+      }
 
         button{
           height: 40px;
