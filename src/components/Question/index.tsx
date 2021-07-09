@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import './style.scss';
 
 type QuestionProps = {
@@ -6,10 +8,11 @@ type QuestionProps = {
     name: string;
     avatar: string;
   };
+  children?: ReactNode;
 }
 
 export function Question({
-  content, author,
+  content, author, children
 }: QuestionProps) {
   return (
     <div className="question">
@@ -19,7 +22,9 @@ export function Question({
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
         </div>
-        <div></div>
+        <div>
+          {children}
+        </div>
       </footer>
     </div>
   );
