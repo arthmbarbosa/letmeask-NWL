@@ -13,7 +13,7 @@
  <H2>💻 O projeto</H2>
  O projeto é um app para gestão de chamados para Helpdesks.
 
- <H1>🚀 Como Baixar</H1>
+ <H2>🚀 Como Baixar</H2>
  
  <ol>
 <li>Clone o repositório </li>
